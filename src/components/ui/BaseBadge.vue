@@ -16,7 +16,6 @@ export default {
 </script>
 
 <style scoped>
-  
   .badge {
   background-color: #ccc;
   color: #252525;

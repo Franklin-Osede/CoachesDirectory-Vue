@@ -9,7 +9,7 @@
 
 <script>
 export default {
-    props: {
+        props: {
         mode: {
             type: String,
             required: false,
@@ -20,14 +20,14 @@ export default {
             required: false,
             default: false
         },
-
-    },
-    to:{
-        type:String,
-        required:false,
-        default:'/'
+        to: {
+            type: String,
+            required: false,
+            default: '/'
+        }
     }
 }
+
 </script>
 
 <style scoped>
