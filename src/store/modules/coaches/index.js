@@ -7,6 +7,7 @@ export default {
   namespaced: true,
   state(){
     return{
+     
         coaches:[
             {
               id: 'c1',
