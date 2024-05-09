@@ -3,10 +3,10 @@
     <h3> {{fullName}} </h3>
     <h4> ${{rate}}/hour </h4>
     <div>
-        <base-badge v-for="area in areas" :key="area" :type="area" :title="area"> </base-badge>
+        <base-badge v-for="area in areas" :key="area" :title="area"> </base-badge>
     </div>
     <div class="actions">
-    <base-button link mode="outline" :to="coachContactLink" > Contact </base-button>
+    <base-button mode="outline" link :to="coachContactLink" > Contact </base-button>
     <base-button link :to="coachDetailsLink" > View Details </base-button>
    </div>
    </li>
@@ -57,5 +57,4 @@ div {
   display: flex;
   justify-content: flex-end;
 }
-    
 </style>

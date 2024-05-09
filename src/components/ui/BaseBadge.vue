@@ -15,8 +15,9 @@ export default {
 }
 </script>
 
-<style scope>
-    .badge {
+<style scoped>
+  
+  .badge {
   background-color: #ccc;
   color: #252525;
   border-radius: 30px;
