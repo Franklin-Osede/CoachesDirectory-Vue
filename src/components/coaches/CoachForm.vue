@@ -150,6 +150,7 @@ export default {
       };
 
       this.$emit('save-data', formData);
+      
     }
   }
 };
