@@ -4,7 +4,6 @@
     <p> {{error}} </p>
     </base-dialog>
     <base-dialog :show="isLoading" title="Authenticating..." fixed>
-    <p>authenticating...</p>
     <base-spinner> </base-spinner>
     </base-dialog>
  <base-card>
@@ -80,8 +79,8 @@ export default {
             } else {
                await this.$store.dispatch('signup', actionPayload);
            }
-           const redirecturl = '/' + (this.$route.query.redirect || 'coaches');
-           this.$router.replace(redirecturl);
+           const redirectUrl = '/' + (this.$route.query.redirect || 'coaches');
+           this.$router.replace(redirectUrl);
         } catch (err) {
                 this.error = err.message || 'Failed to authenticate, try later.'
             }

@@ -16,12 +16,11 @@ export default {
             body: JSON.stringify(coachData)
         });
 
-       const responseData = await response.json();
+      // const responseData = await response.json();
 
-        if(!response.ok){
-           const error = new Error (responseData.message || 'Failed to fetch!');
-           throw error;
-        }
+       if(!response.ok){
+        //...
+    }
 
         context.commit('registerCoach', {
             ...coachData,
@@ -37,11 +36,13 @@ export default {
             `https://coach-finder-5b5d6-default-rtdb.firebaseio.com/coaches.json`
             );
         const responseData = await response.json();
-        
-        if(!response.ok){
-            //...
-        }
 
+        if(!response.ok){
+            const error = new Error (responseData.message || 'Failed to fetch!');
+            throw error;
+         }
+        
+    
         const coaches = [];
 
         for (const key in responseData){
