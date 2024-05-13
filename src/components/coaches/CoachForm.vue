@@ -1,6 +1,6 @@
 <template>
   <form @submit.prevent="submitForm">
-    <div class="form-control" :class="{ invalid: !firstName.isValid }">
+    <div class="form-control" :class="{invalid: !firstName.isValid }">
       <label for="firstname">First name</label>
       <input
         type="text"
