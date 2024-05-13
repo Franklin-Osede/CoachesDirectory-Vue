@@ -14,8 +14,8 @@ export default {
     TheHeader
   },
   computed: {
-    didAutoLogOut(){
-      return this.$store.getter.didAutoLogout;
+    didAutoLogout(){
+      return this.$store.getters.didAutoLogout;
     }
   },
   created(){
