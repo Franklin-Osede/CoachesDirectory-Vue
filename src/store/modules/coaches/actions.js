@@ -1,24 +1,27 @@
 export default {
-    async registerCoach(context, data){
-        const userId=  context.rootGetters.userId;
+    async registerCoach(context, data) {
+        const userId =  context.rootGetters.userId;
         const coachData = {
             firstName: data.first,
             lastName: data.last,
             description: data.desc,
-            hourlyRate:data.rate,
-            areas:data.areas
+            hourlyRate: data.rate,
+            areas: data.areas
         };
 
        const token = context.rootGetters.token; 
 
-       const response = await fetch(`https://coach-finder-5b5d6-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=` + token, {
+       const response = await fetch(
+        `https://coach-finder-5b5d6-default-rtdb.firebaseio.com/coaches/${userId}.json?auth=` + 
+        token,
+         {
             method: 'PUT',
             body: JSON.stringify(coachData)
         });
 
       // const responseData = await response.json();
 
-       if(!response.ok){
+       if (!response.ok){
         //...
     }
 
@@ -27,8 +30,8 @@ export default {
             id: userId
         });
     },
-    async loadCoaches (context, payload){
-        if(!payload.forceRefresh && !context.getters.shouldUpdate){
+    async loadCoaches(context, payload) {
+        if (!payload.forceRefresh && !context.getters.shouldUpdate){
             return;
         }
 

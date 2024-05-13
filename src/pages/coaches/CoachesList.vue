@@ -93,7 +93,8 @@ export default {
 
             try {
              await this.$store.dispatch('coaches/loadCoaches', {
-                forceRefresh: refresh } );
+                forceRefresh: refresh,
+                 });
             } catch (error) {
              this.error = error.message || 'Something went wrong!'  
             }

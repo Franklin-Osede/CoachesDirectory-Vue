@@ -5,7 +5,7 @@ export default {
   return  context.dispatch('auth', {
         ...payload,
         mode: 'login'
-    })
+    });
     },
 
 
@@ -13,7 +13,7 @@ export default {
    return context.dispatch('auth', {
         ...payload,
         mode: 'signup'
-    })
+    });
     },
   async  auth(context,payload){
         const mode = payload.mode;
@@ -47,20 +47,19 @@ export default {
         localStorage.setItem('userId', responseData.localId);
         localStorage.setItem('tokenExpiration', expirationDate)
         
-       timer = setTimeout(function(){
-        context.dispatch('setAutoLogout');
-        },expiresIn)
+       timer = setTimeout(function() {
+        context.dispatch('autoLogout');
+        }, expiresIn);
 
         context.commit('setUser', {
             token: responseData.idToken,
-            userId: responseData.localId,
-           
-        })
+            userId: responseData.localId  
+        });
     },
     tryLogin(context){
         const token = localStorage.getItem('token');
         const userId = localStorage.getItem('userId');
-        const tokenExpiration = localStorage.getItem('tokenExpiration')
+        const tokenExpiration = localStorage.getItem('tokenExpiration');
 
         const expiresIn = +tokenExpiration - new Date().getTime();
 
@@ -88,7 +87,7 @@ export default {
 
         context.commit('setUser', {
             token: null,
-            userId: null,
+            userId: null
         });
     },
     autoLogout(context){
