@@ -25,9 +25,9 @@
 </template>
 
 <script>
-import BaseBadge from '../../components/ui/BaseBadge.vue';
+
 export default {
-  components: { BaseBadge },
+  
   props:['id'],
   data(){
     return{
