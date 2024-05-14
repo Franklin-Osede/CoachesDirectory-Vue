@@ -33,23 +33,25 @@ export default {
         `https://coach-finder-5b5d6-default-rtdb.firebaseio.com/requests/${coachId}.json?auth=` +
           token
       );
+      
       const responseData = await response.json();
   
       if (!response.ok) {
         const error = new Error(
-          responseData.message || 'Failed to fetch requests.'
+          responseData?.message || 'Failed to fetch requests.'
         );
         throw error;
       }
-  
+      
+      
       const requests = [];
   
       for (const key in responseData) {
         const request = {
           id: key,
           coachId: coachId,
-          userEmail: responseData[key].userEmail,
-          message: responseData[key].message
+          userEmail: responseData[key]?.userEmail,
+          message: responseData[key]?.message
         };
         requests.push(request);
       }
